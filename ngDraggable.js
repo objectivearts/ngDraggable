@@ -210,7 +210,7 @@ angular.module("ngDraggable", [])
 
                     var reset = function() {
                         if(allowTransform)
-                        element.css({transform:'', 'z-index':'', '-webkit-transform':'', '-ms-transform':''});
+                        element.css({transform:'', 'z-index':'', '-webkit-transform':'', '-ms-transform':'', 'position': ''});
                         else
                         element.css({'position':'',top:'',left:''});
                     };
@@ -220,6 +220,7 @@ angular.module("ngDraggable", [])
                             element.css({
                                 transform: 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ' + x + ', ' + y + ', 0, 1)',
                                 'z-index': 99999,
+				'position': 'fixed',
                                 '-webkit-transform': 'matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, ' + x + ', ' + y + ', 0, 1)',
                                 '-ms-transform': 'matrix(1, 0, 0, 1, ' + x + ', ' + y + ')'
                             });
